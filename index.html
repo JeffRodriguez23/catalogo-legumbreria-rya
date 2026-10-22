@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Catálogo online de Legumbrería & Dietética R&A. Productos de Perú, Argentina y otros países de Latinoamérica.">
+
+    <meta name="theme-color" content="#a90812">
+
+    <title>Legumbrería & Dietética R&A | Catálogo Online</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main id="contenido-principal">
+
+        <!-- =================================================
+             VISTA DE INICIO
+        ================================================== -->
+        <section id="vista-inicio" class="vista vista-inicio">
+
+            <section class="portada" aria-label="Catálogo online de Legumbrería y Dietética R&A">
+
+                <button id="boton-ver-catalogo" class="boton-portada" type="button">
+
+                    Ver catálogo
+
+                    <span aria-hidden="true">→</span>
+
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================================
+             VISTA DE CATEGORÍAS
+        ================================================== -->
+        <section id="vista-categorias" class="vista vista-categorias oculto">
+
+            <div class="contenedor">
+
+                <!-- =================================================
+                     CABECERA VISUAL DEL CATÁLOGO
+                ================================================== -->
+                <section class="cabecera-catalogo" aria-label="Nuestro catálogo. ¿Qué estás buscando?">
+
+                    <!-- NAVEGACIÓN SUPERPUESTA -->
+                    <div class="navegacion-catalogo">
+
+                        <button id="volver-inicio" class="boton-navegacion" type="button">
+
+                            <span aria-hidden="true">←</span>
+                            Inicio
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- BUSCADOR SUPERPUESTO -->
+                    <div class="buscador-catalogo-superpuesto">
+
+                        <div class="buscador-contenedor">
+
+                            <label for="buscador-general" class="etiqueta-oculta">
+                                Buscar productos
+                            </label>
+
+                            <div class="buscador">
+
+                                <span class="buscador-icono" aria-hidden="true">
+                                    🔎
+                                </span>
+
+                                <input type="search" id="buscador-general" class="buscador-input"
+                                    placeholder="Buscar un producto..." autocomplete="off" spellcheck="false">
+
+                                <button id="limpiar-buscador" class="buscador-limpiar oculto" type="button"
+                                    aria-label="Limpiar búsqueda">
+
+                                    ×
+
+                                </button>
+
+                            </div>
+
+                            <div id="sugerencias-buscador" class="sugerencias-buscador oculto" role="listbox"
+                                aria-label="Sugerencias de productos">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     CATEGORÍAS
+                ================================================== -->
+                <section class="seccion-categorias" aria-label="Categorías de productos">
+
+                    <div id="grilla-categorias" class="grilla-categorias">
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VISTA DE PRODUCTOS
+        ================================================== -->
+        <section id="vista-catalogo" class="vista vista-catalogo oculto">
+
+            <div class="contenedor">
+
+                <!-- =================================================
+                     CABECERA VISUAL DE PRODUCTOS
+                ================================================== -->
+                <section class="cabecera-visual-productos">
+
+                    <!-- NAVEGACIÓN -->
+                    <div class="navegacion-productos">
+
+                        <button id="volver-categorias" class="boton-navegacion" type="button">
+
+                            <span aria-hidden="true">←</span>
+                            Categorías
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- TÍTULO DINÁMICO DE LA CATEGORÍA -->
+                    <header class="cabecera-productos">
+
+                        <p class="seccion-etiqueta">
+                            Productos
+                        </p>
+
+                        <h1 id="titulo-categoria-productos">
+                            Categoría
+                        </h1>
+
+                        <p id="cantidad-productos"></p>
+
+                    </header>
+
+
+                    <!-- BUSCADOR SUPERPUESTO DE LA CATEGORÍA -->
+                    <section class="seccion-buscador-productos" aria-label="Buscar dentro de la categoría">
+
+                        <div class="buscador-productos-categoria">
+
+                            <label for="buscador-categoria" class="etiqueta-oculta">
+                                Buscar dentro de esta categoría
+                            </label>
+
+                            <div class="buscador">
+
+                                <span class="buscador-icono" aria-hidden="true">
+                                    🔎
+                                </span>
+
+                                <input type="search" id="buscador-categoria" class="buscador-input"
+                                    placeholder="Buscar en esta categoría..." autocomplete="off" spellcheck="false">
+
+                                <button id="limpiar-buscador-categoria" class="buscador-limpiar oculto" type="button"
+                                    aria-label="Limpiar búsqueda">
+                                    ×
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </section>
+
+
+                <!-- =================================================
+     FILTRO POR ORIGEN
+================================================== -->
+                <section id="seccion-filtro-origen" class="seccion-filtro seccion-filtro-origen"
+                    aria-label="Filtrar productos por origen">
+
+                    <div class="filtro-encabezado">
+
+                        <span class="filtro-icono" aria-hidden="true">
+                            📍
+                        </span>
+
+                        <p class="filtro-titulo">
+                            Origen
+                        </p>
+
+                        <span class="filtro-linea" aria-hidden="true"></span>
+
+                    </div>
+
+                    <div id="filtros-origen" class="filtros-opciones">
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+     FILTRO POR CARACTERÍSTICAS
+================================================== -->
+                <section id="grupo-filtros-caracteristicas" class="seccion-filtro seccion-filtro-caracteristicas"
+                    aria-label="Filtrar productos por características">
+
+                    <div class="filtro-encabezado">
+
+                        <span class="filtro-icono" aria-hidden="true">
+                            🍃
+                        </span>
+
+                        <p class="filtro-titulo">
+                            Características
+                        </p>
+
+                        <span class="filtro-linea" aria-hidden="true"></span>
+
+                    </div>
+
+                    <div id="filtros-caracteristicas" class="filtros-opciones">
+                    </div>
+
+                </section>
+
+
+                <!-- LIMPIAR FILTROS -->
+                <div id="contenedor-limpiar-filtros" class="contenedor-limpiar-filtros oculto">
+
+                    <button id="limpiar-filtros-categoria" class="boton-limpiar-filtros-categoria" type="button">
+
+                        Limpiar filtros
+
+                    </button>
+
+                </div>
+
+
+                <!-- ESTADO DE PRODUCTOS -->
+                <div id="estado-productos" class="estado-productos oculto" role="status">
+                </div>
+
+
+                <!-- GRILLA DE PRODUCTOS -->
+                <div id="grilla-productos" class="grilla-productos">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+    <footer class="pie-pagina">
+
+        <div class="contenedor pie-contenido">
+
+            <!-- IDENTIDAD -->
+            <div class="pie-presentacion">
+
+                <img src="assets/logo/logo-legumbreria.png" alt="Legumbrería & Dietética R&A" class="pie-logo">
+
+                <p class="pie-descripcion">
+                    Productos regionales y sabores que
+                    nos acercan a nuestras raíces.
+                </p>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL LOCAL -->
+            <div class="pie-informacion">
+
+                <!-- WHATSAPP -->
+                <article class="pie-tarjeta">
+
+                    <div class="pie-icono" aria-hidden="true">
+                        ☎
+                    </div>
+
+                    <div class="pie-tarjeta-contenido">
+
+                        <h2>Contacto</h2>
+
+                        <p>
+                            ¿Querés consultar por un producto?
+                        </p>
+
+                        <a href="https://wa.me/542214281519" target="_blank" rel="noopener noreferrer"
+                            class="pie-enlace">
+
+                            WhatsApp: 221 428-1519
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- HORARIOS -->
+                <article class="pie-tarjeta">
+
+                    <div class="pie-icono" aria-hidden="true">
+                        🕐
+                    </div>
+
+                    <div class="pie-tarjeta-contenido">
+
+                        <h2>Horarios de atención</h2>
+
+                        <div class="horario-fila">
+
+                            <strong>
+                                Lunes a sábado
+                            </strong>
+
+                            <span>
+                                9:00 a 13:00
+                            </span>
+
+                            <span>
+                                16:30 a 20:30
+                            </span>
+
+                        </div>
+
+                        <div class="horario-fila horario-feriado">
+
+                            <strong>
+                                Feriados
+                            </strong>
+
+                            <span>
+                                9:00 a 13:00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- UBICACIÓN -->
+                <article class="pie-tarjeta pie-tarjeta-ubicacion">
+
+                    <div class="pie-icono" aria-hidden="true">
+                        📍
+                    </div>
+
+                    <div class="pie-tarjeta-contenido">
+
+                        <h2>Visitános</h2>
+
+                        <address class="pie-direccion">
+                            Av. 122 1709<br>
+                            entre 67 y 68<br>
+                            La Plata, Provincia de Buenos Aires
+                        </address>
+
+                        <a href="https://www.google.com/maps/place/Tienda+de+mascotas+RYA/@-34.9136115,-57.9213046,17z/data=!3m1!4b1!4m6!3m5!1s0x95a2e6074a98e6a1:0xc5638bc8db9de64f!8m2!3d-34.9136159!4d-57.9187297!16s%2Fg%2F11bvv_4frf?hl=es&entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener noreferrer" class="boton-como-llegar">
+
+                            <span aria-hidden="true">📍</span>
+                            Cómo llegar
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <div class="pie-inferior">
+
+            <p>
+                © <span id="anio-actual"></span>
+                Legumbrería & Dietética R&A
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>

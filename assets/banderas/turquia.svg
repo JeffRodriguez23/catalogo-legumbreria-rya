@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20">
+    <!-- Fondo rojo -->
+    <rect width="30" height="20" fill="#E30A17"/>
+
+    <!-- Media luna -->
+    <circle cx="11.5" cy="10" r="5" fill="#FFFFFF"/>
+    <circle cx="13" cy="10" r="4" fill="#E30A17"/>
+
+    <!-- Estrella -->
+    <path
+        d="M17.2 10
+           L19.05 10.60
+           L20.18 9.03
+           L20.15 10.96
+           L22 11.55
+           L20.13 12.12
+           L20.13 14.05
+           L19.02 12.47
+           L17.17 13.05
+           L18.32 11.50
+           Z"
+        fill="#FFFFFF"
+        transform="translate(0 -1.5)"
+    />
+</svg>
